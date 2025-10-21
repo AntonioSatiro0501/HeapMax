@@ -1,3 +1,5 @@
+// Nome: Antonio Costa Satiro de Souza Ra: 10723636
+
 #include <stdio.h>
 
 void troca(int *x, int *y){
@@ -31,20 +33,22 @@ void avaliaArvore (int lista[], int tamanho, int maior){
 
 void heapMax(int tamanho, int lista[]) {
 
-    int maior = 0;
     for(int f = (tamanho -1)/2; f >= 0; f-- ){
         avaliaArvore(lista, tamanho, f);
     }
 }
 
-void main() {
+int main(void) {
     int array [] = {14, 2, 6, 8, 5, 4, 3, 1, 7, 9, 6, 10, 17, 20, 12, 19};
-    int n = sizeof(array) / 4;
+    int n = sizeof(array) / sizeof(array[0]);
     heapMax(n, array);
 
     printf("[");
     for(int i =0; i < n ; i++ ){
-        printf("%d, ", array[i]);
+        printf("%d", array[i]);
+        if(i < n-1){
+            printf(", ");
+        }
     }
     printf("]");
 }
